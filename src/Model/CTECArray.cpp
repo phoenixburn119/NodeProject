@@ -21,8 +21,17 @@ CTECArray<Type> :: CTECArray(int size)
 		return;
 	}
 
-
-
+	if(head != nullptr)
+	{	//Regualr ArrayNodes are being make.
+		ArrayNode<Type> nextNode;
+		nextNode.setNext(head);
+		this->head = &nextNode;
+	}
+	else
+	{	//The first ArrayNode needs to be made.
+		ArrayNode<Type> firstNode;
+		this->head = &firstNode;
+	}
 }
 
 template <class Type>
