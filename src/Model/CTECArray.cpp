@@ -21,23 +21,42 @@ CTECArray<Type> :: CTECArray(int size)
 		return;
 	}
 
-	if(head != nullptr)
-	{	//Regualr ArrayNodes are being make.
-		ArrayNode<Type> nextNode;
-		nextNode.setNext(head);
-		this->head = &nextNode;
-	}
-	else
-	{	//The first ArrayNode needs to be made.
-		ArrayNode<Type> firstNode;
-		this->head = &firstNode;
+	for (int index = 0; index < size; index++)
+	{
+		if(head != nullptr)
+		{	//Regualr ArrayNodes are being make.
+			ArrayNode<Type> nextNode;
+			nextNode.setNext(head);
+			this->head = &nextNode;
+		}
+		else
+		{	//The first ArrayNode needs to be made.
+			ArrayNode<Type> firstNode;
+			this->head = &firstNode;
+		}
 	}
 }
+
 
 template <class Type>
 CTECArray<Type> :: ~CTECArray()
 {
-	// TODO Auto-generated destructor stub
+	ArrayNode<Type> * deleteMe = head;
+	for(int index = 0; index < size; index++)
+	{
+		if(deleteMe->getNext() 1= nullptr)
+		{
+			head = deleteMe->getNext();
+			deleteMe->setNext(nullptr);
+			delete deleteMe;
+			deleteMe = head;
+		}
+
+		delete deleteMe;
+		deleteMe = head;
+	}
+
+	delete head;
 }
 
 template <class Type>
