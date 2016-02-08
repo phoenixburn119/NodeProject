@@ -65,6 +65,9 @@ int CTECArray<Type> :: getSize()
 	return this->size;
 }
 
+/*
+ *
+ */
 template <class Type>
 void CTECArray<Type> :: set(int position, Type value)
 {
@@ -93,6 +96,9 @@ void CTECArray<Type> :: set(int position, Type value)
 	}
 }
 
+/*
+ * Gets the next value
+ */
 template <class Type>
 Type* CTECArray<Type> :: get(int position)
 {
@@ -115,7 +121,7 @@ Type* CTECArray<Type> :: get(int position)
 			}
 			else
 			{
-				return current->getValu();
+				return current->getValue();
 			}
 		}
 	}
