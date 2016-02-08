@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>130</y>
+      <w>280</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>nodeProject.Model::Node&lt;Type&gt;
+--
+Data Memebers
+-value : Type
+-pointers : Node*
+--
+constructors and methods
++Node() : constructor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>400</y>
+      <w>280</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>nodeProject.Model::ArrayNode&lt;Type&gt;
+--
+Data Members
+-pointers : Node*
+--
+constructors and methods
++ArrayNoe() : constructor
++ArrayNode(Type value) : constructor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>340</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>440</y>
+      <w>280</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>nodeProject.Model::CTECArray&lt;Type&gt;
+--
+Data Members
+-head : ArrayNode*
+--
+constructors and methods
++ CTECArray(int size) : constructor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>490</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+</diagram>
