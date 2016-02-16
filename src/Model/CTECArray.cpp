@@ -6,6 +6,7 @@
  */
 
 #include "CTECArray.h"
+#include <assert.h>
 using namespace std;
 
 template <class Type>
@@ -44,7 +45,7 @@ CTECArray<Type> :: ~CTECArray()
 	ArrayNode<Type> * deleteMe = head;
 	for(int index = 0; index < size; index++)
 	{
-		if(deleteMe->getNext() 1= nullptr)
+		if(deleteMe->getNext() != nullptr)
 		{
 			head = deleteMe->getNext();
 			deleteMe->setNext(nullptr);
@@ -100,20 +101,13 @@ void CTECArray<Type> :: set(int position, Type value)
  * Gets the next value
  */
 template <class Type>
-Type* CTECArray<Type> :: get(int position)
+Type CTECArray<Type> :: get(int position)
 {
-	//We need to do bounds checking so we do not crash the program.
-	if(position >= size || position < 0)
-	{
-		//I am out of bounds and need to do something about it
-		cerr << "Position value is out of bounds." << endl;
-		return nullptr;
-	}
-	else
+	assert(position < size && position >= 0);
 	{
 		//I am in bounds
 		ArrayNode<Type> * current = head;
-		for(int spot = 0; spot<= position; spot++)
+		for(int spot = 0; spot <= position; spot++)
 		{
 			if(spot != position)
 			{

@@ -11,16 +11,15 @@
 #include "../Model/Node.cpp"
 #include "../Model/ArrayNode.h"
 #include "../Model/ArrayNode.cpp"
+#include "../Model/CTECArray.cpp"
+@include "../Model/Timer.h"
 #include <string>
 using namespace std;
 
 class NodeController {
 private:
-	Node<string> stringNode;
-	Node<int> intNode;
-	ArrayNode<string> stringArrayNode;
-	ArrayNode<string> otherArrayNode;
-
+	CTECArray<int> * notHipsterInts;
+	Timer arrayTimer;
 public:
 	NodeController();
 	virtual ~NodeController();

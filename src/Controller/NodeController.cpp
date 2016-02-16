@@ -11,21 +11,22 @@
 
 NodeController::NodeController()
 {
-	stringNode.setValue("asdfakljd");
-	intNode.setValue(999);
-
-	stringArrayNode.setValue("Words in here");
-	otherArrayNode.setValue("Linked node");
-	stringArrayNode.setNext(&otherArrayNode);
+	notHipsterInts = new CTECArray<int>(5);
 }
 
 NodeController::~NodeController() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void NodeController :: start()
 {
-	cout << "The contents the stringNode are " << stringNode.getValue() << endl;
-	cout << "The contents of the stringArrayNode are : " << stringArrayNode.getValue() << endl;
-	cout << "this is connected to stringArrayNode" << (*stringArrayNode.getNext()).getValue() << endl;
+	for(int index = 0; index < notHipsterInts->getSize(); index)
+	{
+		notHipsterInts->set(index, (index + 1));
+	}
+
+	for(int index = notHipsterInts->getSize() -1; index >= 0; index--)
+	{
+		cout << "the stuff notHipsterInts array node " << index << notHipsterInts->get(index) << endl;
+	}
 }
