@@ -8,7 +8,7 @@
 #include "Timer.h"
 #include <iostream>
 #include <iomanip> //Make output look nicer!
-using namespade std;
+using namespace std;
 
 Timer::Timer()
 {
@@ -25,8 +25,8 @@ void Timer::displayTimerInformation()
 	cout << fixed;
 	cout << setprecision(8);
 
-	cout << executionTime << " μs (microseconds) for the code " << endl;
-	cout << "Which is " << float(executionTime)/CLOCKS_PER_SEC<< " seconds" << endl;μ
+	cout << executionTimer << " μs (microseconds) for the code " << endl;
+	cout << "Which is " << float(executionTimer)/CLOCKS_PER_SEC<< " seconds" << endl;
 }
 
 void Timer::startTimer()
@@ -36,16 +36,16 @@ void Timer::startTimer()
 
 void Timer::stopTimer()
 {
-	execionTimer = clock() - executionTimer;
+	executionTimer = clock() - executionTimer;
 }
 
-void Timer::restTimer()
+void Timer::resetTimer()
 {
 	executionTimer = 0;
 }
 
-long Timer::getExecutionTimeInMicroseconds()
+long Timer::getExecutionTimerInMicroseconds()
 {
-	return executionTime;
+	return executionTimer;
 }
 

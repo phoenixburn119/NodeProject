@@ -10,7 +10,7 @@
 #include <time.h>
 
 class Timer {
-	clock_t executionTime;
+	clock_t executionTimer;
 
 public:
 	Timer();
