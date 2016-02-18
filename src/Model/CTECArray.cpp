@@ -16,23 +16,19 @@ CTECArray<Type> :: CTECArray(int size)
 	this->head = nullptr;
 
 	//Defensive
-	if(size <= 0)
-	{
-		cerr << "That is not allowed." << endl;
-		return;
-	}
+	assert(size > 0);
 
 	for (int index = 0; index < size; index++)
 	{
 		if(head != nullptr)
 		{	//Regualr ArrayNodes are being make.
-			ArrayNode<Type> nextNode;
-			nextNode.setNext(head);
-			this->head = &nextNode;
+			ArrayNode<Type> * nextNode = ArrayNode<Type>();
+			nextNode->setNext(head);
+			this->head = nextNode;
 		}
 		else
 		{	//The first ArrayNode needs to be made.
-			ArrayNode<Type> firstNode;
+			ArrayNode<Type> * firstNode = new ArrayNode<Type>();
 			this->head = &firstNode;
 		}
 	}

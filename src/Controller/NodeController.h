@@ -12,7 +12,7 @@
 #include "../Model/ArrayNode.h"
 #include "../Model/ArrayNode.cpp"
 #include "../Model/CTECArray.cpp"
-@include "../Model/Timer.h"
+#include "../Model/Timer.h"
 #include <string>
 using namespace std;
 
