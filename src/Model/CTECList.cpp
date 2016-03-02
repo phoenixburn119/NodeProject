@@ -6,9 +6,10 @@
  */
 
 #include "CTECList.h"
+#include <iostream>
 
 template<class Type>
-CTECList::CTECList()
+CTECList<Type> :: CTECList()
 {
 	this->size = 0;
 	this->head = nullprt;
@@ -17,7 +18,7 @@ CTECList::CTECList()
 }
 
 template<class Type>
-CTECList::~CTECList() {
+CTECList<Type> :: ~CTECList() {
 	// TODO Auto-generated destructor stub
 }
 
@@ -37,6 +38,7 @@ Type CTECList<Type> :: removeFromFront()
 	delete this->head;
 	//Set head to the new head.
 	this->head= newHead;
+	this->calculateSize();
 
 	return thingToRemove;
 }
@@ -53,6 +55,56 @@ Type CTECList<Type> :: removeFromFont()
 	head = newHead;
 }
 
+template<class Type>
+Type CTECList<Type> :: removeFromIndex(int index)
+{
+	Type returnValue;
+
+	assert(size > 0);
+	asst(index >= 0);
+	assert(index < size);
+	assert(size > 0 && index >= && index < size);
+}
+
+template<class Type>
+Type CTECList<Type> :: removeFromEnd()
+{
+	/**
+	 * Check size is valid
+	 * Create a return variable
+	 * Loop until the next to last Node
+	 * Grab the value from t last node
+	 * Delete the last node
+	 * Set new last node as the end
+	 */
+	assert(size>0);
+
+	Type returnValue;
+
+	if(size == 1)
+	{
+		ArrayNode<Type> * toRemove = end;
+		returnValue = removeFromFront();
+		end = nullptr;
+		head = nullptr;
+		delete toRemove;
+	}
+	else
+	{
+		ArrayNode<Type> * current = head
+		for(int index = 0; index < size - 1; index++)
+		{
+			current = current->getNext();
+		}
+		returnValue - end->getValue();
+		delete end;
+		current = end;
+		current->setNext(nullptr);
+	}
+	calculatedSize();
+	return returnValue;
+}
+
 template <class Type>
 void CTECList<Type> :: calculateSize()
 {
@@ -61,7 +113,7 @@ void CTECList<Type> :: calculateSize()
 	int count = 0;
 	if(head == nullptr)
 	{
-		size = count
+		size = count;
 	}
 	else
 	{

@@ -8,14 +8,18 @@
 #ifndef MODEL_CTECLIST_H_
 #define MODEL_CTECLIST_H_
 
-class CTECList {
+template<class Type>
+class CTECList: public Node<Type>
+{
 private:
-	size : int;
+	CTECList<int> * size;
+	CTECList head;
 	head : ArrayNode<Type>;
 	end : ArrayNode<Type>;
 public:
 	CTECList();
 	virtual ~CTECList();
+
 };
 
 #endif /* MODEL_CTECLIST_H_ */
