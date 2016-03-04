@@ -13,8 +13,8 @@ class CTECList: public Node<Type>
 {
 private:
 	CTECList<int> * size;
-	CTECList head;
-	head : ArrayNode<Type>;
+	CTECList<String> * head;
+	//head : ArrayNode<Type>;
 	end : ArrayNode<Type>;
 public:
 	CTECList();

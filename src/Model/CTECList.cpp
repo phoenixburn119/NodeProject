@@ -91,7 +91,7 @@ Type CTECList<Type> :: removeFromEnd()
 	}
 	else
 	{
-		ArrayNode<Type> * current = head
+		ArrayNode<Type> * current = head;
 		for(int index = 0; index < size - 1; index++)
 		{
 			current = current->getNext();
