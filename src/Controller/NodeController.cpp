@@ -18,6 +18,13 @@ NodeController::~NodeController() {
 
 }
 
+void NodeController :: testLists()
+{
+	numbers->addToFront(3);
+	numbers->addToend(9);
+	cout << "End should be 9 and is: " << numbers->getEnd() >>
+}
+
 void NodeController :: start()
 {
 	arrayTimer.startTimer();

@@ -6,20 +6,23 @@
  */
 
 #include "CTECList.h"
+#include "ArrayNode.cpp"
 #include <iostream>
+using namespace std;
 
 template<class Type>
 CTECList<Type> :: CTECList()
 {
 	this->size = 0;
-	this->head = nullprt;
-	this->end = nullprt;
+	this->head = nullptr;
+	this->end = nullptr;
 
 }
 
 template<class Type>
 CTECList<Type> :: ~CTECList() {
 	// TODO Auto-generated destructor stub
+
 }
 
 template<class Type>
@@ -44,7 +47,7 @@ Type CTECList<Type> :: removeFromFront()
 }
 
 template<class Type>
-Type CTECList<Type> :: removeFromFont()
+Type CTECList<Type> :: removeFromEnd()
 {
 	//Find the next spot.
 	ArrayNode<Type> * newHead = new ArrayNode<Type>();
@@ -61,7 +64,7 @@ Type CTECList<Type> :: removeFromIndex(int index)
 	Type returnValue;
 
 	assert(size > 0);
-	asst(index >= 0);
+	assert(index >= 0);
 	assert(index < size);
 	assert(size > 0 && index >= && index < size);
 }
@@ -101,7 +104,7 @@ Type CTECList<Type> :: removeFromEnd()
 		current = end;
 		current->setNext(nullptr);
 	}
-	calculatedSize();
+	calculateSize();
 	return returnValue;
 }
 
